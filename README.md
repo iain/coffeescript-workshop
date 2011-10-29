@@ -11,23 +11,35 @@ First, clone this repository.
 
 To make things easier, I've included a script to get you up and runnig.
 
-### Locally
+### Ubuntu
 
-If you're running on Ubuntu, simply run `install.sh`.
+If you're running on Ubuntu, simply run:
 
-If you're on mac, make sure you have the proper compile tools, git, python and curl before running
-`install.sh`.
+    ./install.sh
+
+### OS X
+
+You'll need development headers (through Xcode), python and curl.
+
+If you're using Homebrew, it's probably best to install Node.js via that.
+
+    brew install node
+
+After that, resume normal installation:
+
+    ./install.sh
 
 ### In a Virtual Machine
 
-If you're running Windows, or don't want to change your local installation,
-install VirtualBox and Ruby, and run:
+I've also included possibility to install it in a VM.
+
+Install [Ruby](http://rvm.beginrescueend.com) and [VirtualBox](https://www.virtualbox.org/), then
+run:
 
     gem install vagrant
     vagrant up
 
 This will take a lot of time the first time, because it will download Linux and compile Node.js.
-You can easily drink a pot of coffee while you wait. (har har har)
 
 Login to your freshly created VM:
 
@@ -52,4 +64,4 @@ So the example specs (to see if everything installed correctly):
 
     jasmine-node --coffee example
 
-It has one passing spec and one failing spec.
+It has one passing spec and one failing spec. Try fixing it as a first exercise.
