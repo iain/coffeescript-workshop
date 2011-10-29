@@ -3,7 +3,6 @@
 This is part of the javascript/coffeescript workshops, given on 2011-11-01 and 2011-11-09 by
 [Iain Hecker](http://iain.nl) at [Finalist](http://finalist.nl).
 
-* [CoffeeScript reference](http://coffeescript.org)
 
 ## Installation
 
@@ -65,3 +64,10 @@ So the example specs (to see if everything installed correctly):
     jasmine-node --coffee example
 
 It has one passing spec and one failing spec. Try fixing it as a first exercise.
+
+## Read more
+
+* [CoffeeScript](http://coffeescript.org)
+* [Jasmine BDD](http://pivotal.github.com/jasmine/)
+* [Node.js](http://nodejs.org/)
+* [NPM](http://npmjs.org/)
