@@ -19,7 +19,7 @@ describe "Bowling", ->
 
   describe 'a spare', ->
 
-    it 'doubles the score of the next role', ->
+    it 'doubles the score of the next roll', ->
       rollSpare()
       roll(3)
       rollMany(17, 0)
