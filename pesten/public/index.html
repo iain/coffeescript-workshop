@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pesten met Websockets</title>
+    <link href="bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="application.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+    <script src="application.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <div class="brand" id="reset">Pesten met Websockets</div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="span-one-third">
+          <div id="stackContainer">
+            <h2>Stack</h2>
+            <div id="stack"></div>
+          </div>
+        </div>
+        <div class="span-one-third">
+          <div id="messages">
+            <h2>Messages</h2>
+            <div id="panel"></div>
+            <form>
+              <input id="box">
+              <button id="chat" class="btn">Send</button>
+            </form>
+          </div>
+        </div>
+        <div class="span-one-third">
+          <div id="playerContainer">
+            <h2>People</h2>
+            <ul id="players"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span16">
+          <div id="cardsContainer">
+            <h2>Your hand</h2>
+            <div id="cards">
+              <button id="join" class="btn primary">Join Game!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+# A sample Guardfile
+# More info at https://github.com/guard/guard#readme
+#
+# guard 'process', :name => 'node', :command => 'coffee app.coffee' do
+#   watch('app.coffee')
+# end
+
+guard 'coffeescript', :input => 'views', :output => 'public'
