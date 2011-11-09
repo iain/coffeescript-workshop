@@ -26,12 +26,7 @@ handleCardClick = (event) ->
 handleJoinClick = (event) =>
   event.preventDefault()
   $(event.target).remove()
-  socket.emit 'join game'
-
-handleResetClick = (event) =>
-  event.preventDefault()
-  if confirm("Are you sure you want to reset the game?")
-    socket.emit "reset game"
+  alert("You clicked this button")
 
 findPlayer = (player) ->
   $("#players li#player_#{player.id}")
@@ -42,10 +37,7 @@ addPlayer = (player) ->
 notice = (message, type="normal") ->
   $('#panel').append("<p class='#{type}'>#{message.replace(/</g, '&lt;')}</p>")
   $('#panel').scrollTop(1000000)
-
-putOnStack = (card) ->
-  $('#stack img').remove()
-  $('#stack').append("<img class='card' src='/images/#{card.image}'>")
+  focus()
 
 socket.on 'welcome', (data) ->
   notice "Welcome, #{data.player.name}"
@@ -67,42 +59,9 @@ socket.on 'you said', (data) ->
 socket.on 'player said', (data) ->
   notice "#{data.player.name} said: #{data.message}", 'playerSaid'
 
-socket.on 'recieve cards', (data) ->
-  notice "You got #{data.cards.length} cards"
-  for card in data.cards
-    image = $("<img id='card_#{card.id}' class='card' src='/images/#{card.image}'>")
-    image.click(handleCardClick)
-    $("#cards").append(image)
-
-socket.on 'joined game', (data) ->
-  notice "Player #{data.player.name} joined the game"
-
-socket.on 'card played', (data) ->
-  notice "Player #{data.player.name} played #{data.card.name}"
-  putOnStack(data.card)
-
-socket.on 'card accepted', (data) ->
-  notice "You played the #{data.card.name}"
-  $("#cards #card_#{data.card.id}").remove()
-  putOnStack(data.card)
-
-socket.on 'card rejected', ->
-  notice "That card is not allowed to be played"
-
-socket.on 'reset', (data) ->
-  notice "Player #{data.player.name} has reset the game"
-  $("#stack img").remove()
-  $("#cards img").remove()
-  $("#cards button").remove()
-  button = $("<button id='join' class='btn primary'>Join Game!</button>")
-  $("#cards").append(button)
-  button.click(handleJoinClick)
-
-
 jQuery ->
   $('#chat').click(handleChatClick)
   $('#join').click(handleJoinClick)
-  $('#reset').click(handleResetClick)
   $(window).click(focus)
   focus()
   chooseName()
